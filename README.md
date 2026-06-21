@@ -4,14 +4,15 @@ This repo deploys [course_platform](https://github.com/surya-krishna/course_plat
 
 ## Live URL
 
-https://surya-krishna.github.io/course_platform_web/
+https://student.mentorstreak.com
 
 ## How it works
 
 The GitHub Actions workflow:
 1. Checks out the source `course_platform` repo
-2. Builds Flutter web with `--base-href "/course_platform_web/"`
-3. Deploys the built output to GitHub Pages
+2. Builds Flutter web with `--base-href "/"`
+3. Copies the `CNAME` file into the build output
+4. Deploys to GitHub Pages with custom domain
 
 ## Setup
 
@@ -21,6 +22,10 @@ The GitHub Actions workflow:
 4. Push to `main` or trigger the workflow manually from the Actions tab.
 
 > If `course_platform` is public, you can remove the `token` line from the workflow and skip the secret.
+
+## Custom Domain
+
+The site is served at `student.mentorstreak.com`. DNS must have a CNAME record pointing `student.mentorstreak.com` to `surya-krishna.github.io`. Enable "Enforce HTTPS" in the repo's Settings → Pages.
 
 ## Triggering a rebuild
 

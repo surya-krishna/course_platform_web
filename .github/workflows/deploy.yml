@@ -44,7 +44,10 @@ jobs:
 
       - name: Build web
         working-directory: source
-        run: flutter build web --release --base-href "/course_platform_web/"
+        run: flutter build web --release --base-href "/"
+
+      - name: Add CNAME for custom domain
+        run: cp CNAME source/build/web/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
